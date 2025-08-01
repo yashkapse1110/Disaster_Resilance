@@ -1,0 +1,21 @@
+📁 src
+  📄 env.ts
+  📄 express.d.ts
+  📄 main.ts
+  📁 routes
+    📄 alertRoutes.ts
+    📄 authRoutes.ts
+    📄 reportRoutes.ts
+  📁 models
+    📄 alertModel.ts
+    📄 reportModel.ts
+    📄 userModel.ts
+  📁 middlewares
+    📄 authenticateToken.ts
+    📄 requireAdmin.ts
+  📁 controllers
+    📄 alertController.ts
+    📄 authController.ts
+    📄 reportController.ts
+  📁 config
+    📄 db.ts

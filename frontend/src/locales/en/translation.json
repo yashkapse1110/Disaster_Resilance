@@ -1,0 +1,188 @@
+{
+  "login": {
+    "back": "Back",
+    "title": "Sign In",
+    "subtitle": "Welcome back! Please log in.",
+    "phoneLabel": "Username or Phone Number",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "remember": "Remember for 30 days",
+    "forgot": "Forgot password?",
+    "login": "Login",
+    "success": "Login successful!",
+    "failed": "Login failed. Please try again.",
+    "noAccount": "Don’t have an account?",
+    "register": "Register"
+  },
+  "register": {
+    "back": "Back",
+    "title": "Create an account",
+    "subtitle": "Welcome! Please enter your details",
+    "name": "Full Name",
+    "namePlaceholder": "Your Name",
+    "phone": "Phone Number",
+    "password": "Password",
+    "passwordPlaceholder": "Minimum 8 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter password",
+    "passwordNote": "Password must be at least 8 characters",
+    "signup": "Sign Up",
+    "success": "Account created! Redirecting...",
+    "haveAccount": "Already have an account?",
+    "login": "Log in",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "genericError": "Something went wrong. Try again."
+  },
+
+  "otp": {
+  "title": "Phone number Verification",
+  "subtitle": "Enter the 6-digit code sent to your phone",
+  "verify": "Verify & Continue",
+  "invalid": "Invalid code. Please try again.",
+  "resendText": "Didn't receive the code?",
+  "resend": "Send again",
+  "back": "Go back"
+},
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your phone number to receive an OTP",
+    "back": "Go back",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "9800000000",
+    "sendOtpButton": "Send OTP"
+  },
+  "dashboard": {
+    "recentIncidents": "Recent Incidents",
+    "sahayatacall": "Sahayata Call",
+    "Verified": "Verified",
+    "Working": "Working",
+    "Solved": "Solved",
+    "Pending": "Pending",
+    "All": "All",
+    "latestReports": "Latest Reports"
+  },
+   "Latest": "Latest",
+  "Oldest": "Oldest",
+  "mapit": {
+    "filterLabel": "Filter Incidents",
+    "selectAll": "All Types"
+  },
+  "map": {
+    "title": "Disaster Map",
+    "youAreHere": "You are here",
+    "filterLabel": "Filter Incidents",
+    "selectAll": "Select All",
+    "clearAll": "Clear All",
+    "showPath": "Show Path"
+  },
+  "incidentTypes": {
+    "incident": "Incident",
+    "complaint": "Complaint",
+    "suggestion": "Suggestion",
+    "police": "Police",
+    "fire": "Fire",
+    "flood": "Flood",
+    "landslide": "Landslide",
+    "accident": "Accident",
+    "garbage": "Garbage",
+    "relief": "Relief",
+    "other": "Other"
+  },
+  "fireAuthorities":{
+  "nearbyFireAuthorities": "Nearby Fire Authorities",
+  "call": "Call"
+},
+"policeAuthorities": {
+  "nearbyPoliceAuthorities": "Nearby Police Authorities",
+  "call": "Call"
+},
+"floodAuthorities": {
+  "nearbyFloodAuthorities": "Nearby Flood Relief",
+  "call": "Call"
+},
+"accidentAuthorities": {
+  "nearbyAccidentAuthorities": "Nearby Accident Response",
+  "call": "Call"
+},
+"landslideAuthorities": {
+  "nearbyLandslideAuthorities": "Nearby Landslide Rescue",
+  "call": "Call"
+},
+"otherAuthorities": {
+  "nearbyOtherAuthorities": "Other Emergency Services",
+  "call": "Call"
+},
+  "selectEmergencyType": "Select Emergency Type",
+  "emergency": {
+    "fire": "Fire",
+    "police": "Police",
+    "flood": "Flood",
+    "accident": "Accident",
+    "landslide": "Landslide",
+    "other": "Other"
+  },
+  "navigation": {
+    "home": "Home",
+    "report": "Report",
+    "map": "Map",
+    "alerts": "Alerts",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "hello": "Hello",
+    "citizen": "Citizen",
+    "tillotama": "Tillotama",
+    "butwal": "Butwal",
+    "detectingLocalGovernment": "Detecting your local Government..."
+    
+  },
+   "alerts": {
+    "title": "Emergency Alerts"
+  },
+  "report": {
+    "getLocation": "Get Location",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe the issue briefly...",
+    "selectAuthority": "Select Related Authority",
+    "selectOption": "Choose a type",
+    "submit": "Submit Report",
+    "submitting": "Submitting",
+    "success": "Report submitted successfully!",
+    "photoReady": "Photo ready",
+    "useRealTimePhoto": "Please take a real-time photo using the camera.",
+     "locationRequired": "Location is required to submit a report.",
+    "descriptionRequired": "Please provide a short description.",
+    "mediaRequired": "Please upload a valid image or video.",
+    "tagRequired": "Please select an authority type.",
+    "submitFailed": "Something went wrong. Please try again later."
+  },
+"profile": {
+  "title": "My Profile",
+  "back": "Back",
+  "phone": "Phone",
+  "email": "Email",
+  "gender": "Gender",
+  "citizenship": "Citizenship ID",
+  "address": "Address",
+  "language": "Language",
+  "fontSize": "Font Size",
+  "fontFamily": "Font Family",
+  "theme": "Theme",
+  "verification": "Verification",
+  "verified": "Verified",
+  "notVerified": "Not Verified",
+  "community": "Thank you for being a responsible citizen!"
+  },
+
+  "auth": {
+  "logout": "Logout",
+  "tagline": "From alert to action - Instantly",
+  "login": "Login",
+  "register": "Register"
+  }
+
+
+
+
+}

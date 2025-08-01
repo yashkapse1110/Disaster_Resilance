@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* src/index.css */
+:root {
+  --font-sans: "Inter", sans-serif;
+  --color-bg: #f9fafb;
+  --color-text: #111827;
+  width: 100%;
+}
+
+/* Base reset and defaults */
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+@keyframes bounce-glow {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 1);
+  }
+}
+
+.animate-bounce-glow {
+  animation: bounce-glow 1.2s infinite;
+  border-radius: 50%;
+}

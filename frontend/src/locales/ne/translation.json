@@ -1,0 +1,181 @@
+{
+  "login": {
+    "back": "फिर्ता",
+    "title": "लगइन गर्नुहोस्",
+    "subtitle": "फेरि स्वागत छ! कृपया लगइन गर्नुहोस्।",
+    "phoneLabel": "प्रयोगकर्ता नाम वा फोन नम्बर",
+    "passwordLabel": "पासवर्ड",
+    "passwordPlaceholder": "आफ्नो पासवर्ड लेख्नुहोस्",
+    "remember": "३० दिनको लागि सम्झनुहोस्",
+    "forgot": "पासवर्ड बिर्सनुभयो?",
+    "login": "लगइन",
+    "success": "लगइन सफल भयो!",
+    "failed": "लगइन असफल भयो। फेरि प्रयास गर्नुहोस्।",
+    "noAccount": "खाता छैन?",
+    "register": "दर्ता गर्नुहोस्"
+  },
+  "register": {
+    "back": "फिर्ता",
+    "title": "खाता खोल्नुहोस्",
+    "subtitle": "स्वागत छ! कृपया आफ्नो विवरण प्रविष्ट गर्नुहोस्",
+    "name": "पूरा नाम",
+    "namePlaceholder": "तपाईंको नाम",
+    "phone": "फोन नम्बर",
+    "password": "पासवर्ड",
+    "passwordPlaceholder": "न्यूनतम ८ क्यारेक्टर",
+    "confirmPassword": "पासवर्ड पुन: लेख्नुहोस्",
+    "confirmPasswordPlaceholder": "पासवर्ड पुन: लेख्नुहोस्",
+    "passwordNote": "पासवर्ड कम्तिमा ८ क्यारेक्टर हुनुपर्छ",
+    "signup": "साइन अप",
+    "success": "खाता सफलतापूर्वक सिर्जना भयो! पुन: निर्देशित गर्दै...",
+    "haveAccount": "पहिले नै खाता छ?",
+    "login": "लग इन गर्नुहोस्",
+    "showPassword": "पासवर्ड देखाउनुहोस्",
+    "hidePassword": "पासवर्ड लुकाउनुहोस्",
+    "register.genericError": "केही गलत भयो। कृपया पुन: प्रयास गर्नुहोस्।"
+  },
+  "otp": {
+    "title": "फोन नम्बर प्रमाणिकरण",
+    "subtitle": "तपाईंको फोनमा पठाइएको ६-अङ्कको कोड प्रविष्ट गर्नुहोस्",
+    "verify": "प्रमाणित गर्नुहोस् र अगाडि बढ्नुहोस्",
+    "invalid": "अवैध कोड। कृपया पुनः प्रयास गर्नुहोस्।",
+    "resendText": "कोड प्राप्त भएन?",
+    "resend": "पुनः पठाउनुहोस्",
+    "back": "फिर्ता जानुहोस्"
+  },
+  "forgotPassword": {
+    "title": "पासवर्ड बिर्सनुभयो?",
+    "subtitle": "OTP प्राप्त गर्न आफ्नो फोन नम्बर प्रविष्ट गर्नुहोस्",
+    "back": "फिर्ता जानुहोस्",
+    "phoneLabel": "फोन नम्बर",
+    "phonePlaceholder": "९८००००००००",
+    "sendOtpButton": "OTP पठाउनुहोस्"
+  },
+  "dashboard": {
+    "recentIncidents": "भर्खरका घटनाहरू",
+    "sahayatacall": "सहायता कल",
+    "Verified": "रिपोर्ट गरिएको",
+    "Working": "कार्यरत",
+    "Solved": "समाधान भयो",
+    "Pending": "प्रतीक्षारत",
+    "All": "सबै",
+    "latestReports": "नवीनतम रिपोर्टहरू"
+  },
+  "Latest": "नवीनतम",
+  "Oldest": "पुराना",
+  "mapit": {
+    "filterLabel": "घटनाहरू फिल्टर गर्नुहोस्",
+    "selectAll": "सबै प्रकार"
+  },
+  "map": {
+    "title": "विपद् नक्सा",
+    "youAreHere": "तपाईं यहाँ हुनुहुन्छ",
+    "filterLabel": "घटनाहरू फिल्टर गर्नुहोस्",
+    "selectAll": "सबै चयन गर्नुहोस्",
+    "clearAll": "सबै हटाउनुहोस्",
+    "showPath": "मार्ग देखाउनुहोस्"
+  },
+  "incidentTypes": {
+    "incident": "घटना",
+    "complaint": "गुनासो",
+    "suggestion": "सुझाव",
+    "police": "प्रहरी",
+    "fire": "आगो",
+    "flood": "बाढी",
+    "landslide": "पहिरो",
+    "accident": "दुर्घटना",
+    "garbage": "फोहोर",
+    "relief": "राहत",
+    "other": "अन्य"
+  },
+  "fireAuthorities": {
+    "nearbyFireAuthorities": "नजिकैका दमकल सेवा",
+    "call": "कल गर्नुहोस्"
+  },
+  "policeAuthorities": {
+    "nearbyPoliceAuthorities": "नजिकैका प्रहरी सेवा",
+    "call": "कल गर्नुहोस्"
+  },
+  "floodAuthorities": {
+    "nearbyFloodAuthorities": "नजिकैका बाढी राहत सेवा",
+    "call": "कल गर्नुहोस्"
+  },
+  "accidentAuthorities": {
+    "nearbyAccidentAuthorities": "नजिकैका दुर्घटना प्रतिक्रिया",
+    "call": "कल गर्नुहोस्"
+  },
+  "landslideAuthorities": {
+    "nearbyLandslideAuthorities": "नजिकैका पहिरो उद्धार",
+    "call": "कल गर्नुहोस्"
+  },
+  "otherAuthorities": {
+    "nearbyOtherAuthorities": "अन्य आपतकालीन सेवा",
+    "call": "कल गर्नुहोस्"
+  },
+  "selectEmergencyType": "आपतकालीन प्रकार छान्नुहोस्",
+  "emergency": {
+    "fire": "आगो",
+    "police": "प्रहरी",
+    "flood": "बाढी",
+    "accident": "दुर्घटना",
+    "landslide": "पहिरो",
+    "other": "अन्य"
+  },
+  "navigation": {
+    "home": "गृहपृष्ठ",
+    "report": "रिपोर्ट",
+    "map": "नक्सा",
+    "alerts": "चेतावनीहरू",
+    "profile": "प्रोफाइल",
+    "settings": "सेटिङहरू",
+    "logout": "लगआउट",
+    "hello": "नमस्ते",
+    "citizen": "नागरिक",
+    "tillotama": "तिलोत्तमा",
+    "butwal": "बुटवल",
+    "detectingLocalGovernment": "तपाईंको स्थानीय सरकार पत्ता लगाउँदै..."
+  },
+  "alerts": {
+    "title": "आपतकालीन चेतावनीहरू"
+  },
+  "report": {
+    "getLocation": "स्थान प्राप्त गर्नुहोस्",
+    "description": "विवरण",
+    "descriptionPlaceholder": "समस्या छोटकरीमा वर्णन गर्नुहोस्...",
+    "selectAuthority": "सम्बन्धित निकाय चयन गर्नुहोस्",
+    "selectOption": "प्रकार छान्नुहोस्",
+    "submit": "रिपोर्ट पठाउनुहोस्",
+    "submitting": "पठाउँदै",
+    "success": "रिपोर्ट सफलतापूर्वक पठाइयो!",
+    "photoReady": "फोटो तयार",
+    "useRealTimePhoto": "कृपया क्यामेराबाट वास्तविक समयको फोटो लिनुहोस्।",
+    "locationRequired": "रिपोर्ट पठाउन स्थान आवश्यक छ।",
+    "descriptionRequired": "कृपया समस्या छोटकरीमा वर्णन गर्नुहोस्।",
+    "mediaRequired": "कृपया मान्य फोटो वा भिडियो अपलोड गर्नुहोस्।",
+    "tagRequired": "कृपया निकायको प्रकार चयन गर्नुहोस्।",
+    "submitFailed": "केही गलत भयो। कृपया फेरि प्रयास गर्नुहोस्।"
+  },
+  "profile": {
+    "title": "मेरो प्रोफाइल",
+    "back": "फिर्ता",
+    "phone": "फोन",
+    "email": "इमेल",
+    "gender": "लिङ्ग",
+    "citizenship": "नागरिकता ID",
+    "address": "ठेगाना",
+    "language": "भाषा",
+    "fontSize": "फन्ट साइज",
+    "fontFamily": "फन्ट स्टाइल",
+    "theme": "थिम",
+    "verification": "प्रमाणीकरण",
+    "verified": "प्रमाणित",
+    "notVerified": "अप्रमाणित",
+    "community": "जिम्मेवार नागरिक भएकोमा धन्यवाद!"
+  },
+  "auth": {
+    "logout": "बाहिर निस्कनुहोस्",
+    "tagline": "चेतावनीदेखि कार्यसम्म - तुरुन्तै",
+    "login": "लगइन",
+    "register": "दर्ता"
+  }
+}
