@@ -97,6 +97,12 @@ In addition, the platform offers:
 
 ### [Contact Me](https://arunneupane.netlify.app)
 
+## Requirements
+
+- Node.js v18+
+- MongoDB Atlas or Local DB
+- npm (v9+)
+
 ## How to Run
 
 1. **Download the repository**
@@ -155,10 +161,10 @@ For major changes, open an issue first to discuss what you’d like to change.
 
 #### 🔹 Initial Prototype – _Team Emergex_
 
+- **Aayush Chapagain** – UI/UX Design & Project Manager
 - **Arun Neupane** – Frontend Development
-- **Bibek Bhusal** – Backend Development
-- **Aayush Chapagain** – UI/UX Design
 - **Barsha Panthi** – UI/UX Design & Research
+- **Bibek Bhusal** – Backend Development
 
     <img src="./assets/images/team-emergex.jpg" alt="Team Emergex" width="350"/>
 
@@ -179,7 +185,7 @@ For major changes, open an issue first to discuss what you’d like to change.
 
 - **Arun Neupane** – Full-Stack Development
 - **Bijay Chaudhary** – Documentation & Reports
-- **Sunil Paudyal** – Logistics & Coordination
+- **Sunil Paudyal** – Logistics & Coordination, Entertainment
 - **Supervised by:** Mr. Suraj Pandey
 
     <img src="./assets/images/team-bigah.jpg" alt="Team Emergex" width="350"/>
@@ -188,7 +194,7 @@ For major changes, open an issue first to discuss what you’d like to change.
 
 ## Acknowledgements
 
-We would like to thank our mentors, faculty members, and supporters who guided us throughout this journey.
+We would like to thank our mentors, supervisor, and supporters who guided us throughout this journey.
 
 Special thanks to these technologies and tools:
 
@@ -227,6 +233,10 @@ If you have questions, feedback, or ideas:
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?&logo=youtube&logoColor=white)](https://youtube.com/@code_with_ease)
 
 ---
+
+## Changelog
+
+- v1.0.0 — initial release (August 2, 2025)
 
 ## Final Note
 
