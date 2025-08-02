@@ -80,11 +80,24 @@ _From Alert to Action Instantly_
 
 3. **Install dependencies & run**
 
-   - In **both folders**, run:
+   - In **frontend folder**, run:
+     ```bash
+     npm install react@18.3.1 react-dom@18.3.1 react-leaflet@4.2.1
+     npm install
+     npm run dev
+     ```
+   - In **backend folder**, run:
      ```bash
      npm install
      npm run dev
      ```
+   - Don't forget to add your own env file inside backend folder
+
+   ```bash
+   PORT=3000
+   MONGO_URI=your-mongodb-connection-string
+   JWT_SECRET=your-secret-key
+   ```
 
 4. **Need Help?**
    - Contact me on WhatsApp: **+977 9811420975**

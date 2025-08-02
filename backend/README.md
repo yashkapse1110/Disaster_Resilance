@@ -46,6 +46,8 @@ It provides APIs for user authentication, incident reporting, and alert broadcas
 ````bash
 git clone https://github.com/arundada9000/sajilo-sahayata.git
 cd sajilo-sahayata/backend
+npm install
+npm run dev
 
 ## Repository Structure
 <pre lang="plaintext"> ```
@@ -79,7 +81,7 @@ sajilo-sahayata-backend/
 
 ```
 
-PORT=5000
+PORT=3000
 MONGO_URI=your-mongodb-connection-string
 JWT_SECRET=your-secret-key
 
