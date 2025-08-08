@@ -21,33 +21,33 @@ import Navigation from "../layouts/Navigation";
 import Profile from "../pages/Dashboard/Profile";
 import EmergencyTypeSelection from "../pages/Dashboard/EmergencyTypeSelection";
 
-import Fire from "../contactInfo/butwal/Fire";
-import Police from "../contactInfo/butwal/Police";
-import Flood from "../contactInfo/butwal/Flood";
-import Landslide from "../contactInfo/butwal/Landslide";
-import Other from "../contactInfo/butwal/Other";
-import Accident from "../contactInfo/butwal/Accident";
+import Fire from "../contactInfo/Butwal/Fire";
+import Police from "../contactInfo/Butwal/Police";
+import Flood from "../contactInfo/Butwal/Flood";
+import Landslide from "../contactInfo/Butwal/Landslide";
+import Other from "../contactInfo/Butwal/Other";
+import Accident from "../contactInfo/Butwal/Accident";
 
-import TillotamaFire from "../contactInfo/tillotama/Fire";
-import TillotamaPolice from "../contactInfo/tillotama/Police";
-import TillotamaFlood from "../contactInfo/tillotama/Flood";
-import TillotamaLandslide from "../contactInfo/tillotama/Landslide";
-import TillotamaOther from "../contactInfo/tillotama/Other";
-import TillotamaAccident from "../contactInfo/tillotama/Accident";
+import TillotamaFire from "../contactInfo/Tillotama/Fire";
+import TillotamaPolice from "../contactInfo/Tillotama/Police";
+import TillotamaFlood from "../contactInfo/Tillotama/Flood";
+import TillotamaLandslide from "../contactInfo/Tillotama/Landslide";
+import TillotamaOther from "../contactInfo/Tillotama/Other";
+import TillotamaAccident from "../contactInfo/Tillotama/Accident";
 
-import OmsatiyaFire from "../contactInfo/omsatiya/Fire";
-import OmsatiyaPolice from "../contactInfo/omsatiya/Police";
-import OmsatiyaFlood from "../contactInfo/omsatiya/Flood";
-import OmsatiyaLandslide from "../contactInfo/omsatiya/Landslide";
-import OmsatiyaOther from "../contactInfo/omsatiya/Other";
-import OmsatiyaAccident from "../contactInfo/omsatiya/Accident";
+import OmsatiyaFire from "../contactInfo/Omsatiya/Fire";
+import OmsatiyaPolice from "../contactInfo/Omsatiya/Police";
+import OmsatiyaFlood from "../contactInfo/Omsatiya/Flood";
+import OmsatiyaLandslide from "../contactInfo/Omsatiya/Landslide";
+import OmsatiyaOther from "../contactInfo/Omsatiya/Other";
+import OmsatiyaAccident from "../contactInfo/Omsatiya/Accident";
 
-import SiddharthanagarFire from "../contactInfo/siddharthanagar/Fire";
-import SiddharthanagarPolice from "../contactInfo/siddharthanagar/Police";
-import SiddharthanagarFlood from "../contactInfo/siddharthanagar/Flood";
-import SiddharthanagarLandslide from "../contactInfo/siddharthanagar/Landslide";
-import SiddharthanagarOther from "../contactInfo/siddharthanagar/Other";
-import SiddharthanagarAccident from "../contactInfo/siddharthanagar/Accident";
+import SiddharthanagarFire from "../contactInfo/Siddharthanagar/Fire";
+import SiddharthanagarPolice from "../contactInfo/Siddharthanagar/Police";
+import SiddharthanagarFlood from "../contactInfo/Siddharthanagar/Flood";
+import SiddharthanagarLandslide from "../contactInfo/Siddharthanagar/Landslide";
+import SiddharthanagarOther from "../contactInfo/Siddharthanagar/Other";
+import SiddharthanagarAccident from "../contactInfo/Siddharthanagar/Accident";
 
 import AdminDashboard from "../Admin/Dashboard";
 import ManageUsers from "../Admin/Manage-Users";
