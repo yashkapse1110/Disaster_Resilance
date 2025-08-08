@@ -53,7 +53,7 @@ import AdminDashboard from "../Admin/Dashboard";
 import ManageUsers from "../Admin/Manage-Users";
 import ManageReports from "../Admin/Manage-Reports";
 import SendAlerts from "../Admin/SendAlerts";
-import RequireAdmin from "../auth/RequireAdmin";
+import RequireAdmin from "../Auth/RequireAdmin";
 import Unauthorized from "../pages/Unauthorized";
 import Logout from "../Auth/Logout";
 import AdminLayout from "../layouts/AdminLayout";
