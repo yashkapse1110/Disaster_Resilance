@@ -47,7 +47,6 @@ A full-stack application built using React, Tailwind CSS, Node.js, Express, Mong
 git clone https://github.com/arundada9000/Sajilo-Sahayata.git
 cd Sajilo-Sahayata
 cd frontend
-npm install react@18.3.1 react-dom@18.3.1 react-leaflet@4.2.1
 npm install
 npm run dev
 

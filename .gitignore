@@ -68,3 +68,4 @@ vite.config.ts.timestamp*
 
 # Ignore lockfile in frontend
 /frontend/package-lock.json
+/frontend/src/services/firebase.js

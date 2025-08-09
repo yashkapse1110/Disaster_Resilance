@@ -121,7 +121,6 @@ In addition, the platform offers:
 
    - In **frontend folder**, run:
      ```bash
-     npm install react@18.3.1 react-dom@18.3.1 react-leaflet@4.2.1
      npm install
      npm run dev
      ```
