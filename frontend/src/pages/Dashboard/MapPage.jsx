@@ -111,9 +111,6 @@ const MapPage = () => {
         );
 
         const response = await API.get("/reportsLocation");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
         const data = response.data;
         setIncidents(data);
       } catch (error) {
