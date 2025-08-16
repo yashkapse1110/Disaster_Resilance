@@ -3,27 +3,17 @@ import Report from "../models/reportModel";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-export const createReport = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  const allowedTypes = [
-    "fire",
-    "police",
-    "flood",
-    "accident",
-    "landslide",
-    "other",
-  ];
+export const createReport = async (req: Request, res: Response) => {
+  const allowedTypes = ["fire", "police", "flood", "accident", "landslide", "other"];
   try {
-    const { type, description, location } = req.body;
-
+    const { type, description, location} = req.body;
+    
     if (!type || typeof type !== "string") {
-      res.status(400).json({
-        message: `Invalid type. It must be one of: ${allowedTypes.join(", ")}.`,
-      });
-      return;
-    }
+  res.status(400).json({
+    message: `Invalid type. It must be one of: ${allowedTypes.join(", ")}.`,
+  });
+  return;
+}
 
     if (
       !description ||
@@ -42,15 +32,16 @@ export const createReport = async (
       res.status(400).json({ message: "Location must be a string." });
       return;
     }
-
+  
     const imageUrl = `uploads/${req.file?.filename}`;
 
     const report = new Report({
       type,
       description,
       location: {
-        coordinates: parsedLocation as number[], // ✅ use number[] instead of tuple
+        coordinates: parsedLocation,
       },
+      // userId,
       imageUrl,
     });
 
@@ -61,10 +52,7 @@ export const createReport = async (
   }
 };
 
-export const verifyReport = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const verifyReport = async (req: Request, res: Response) => {
   try {
     const report = await Report.findById(req.params.id);
     if (!report) {
@@ -85,10 +73,7 @@ export const verifyReport = async (
   }
 };
 
-export const getAllReports = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getAllReports = async (req: Request, res: Response) => {
   try {
     const reports = await Report.find();
     res.json(reports);
@@ -97,10 +82,7 @@ export const getAllReports = async (
   }
 };
 
-export const getReportById = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getReportById = async (req: Request, res: Response) => {
   try {
     const report = await Report.findById(req.params.id);
     if (!report) {
@@ -115,35 +97,36 @@ export const getReportById = async (
 
 dayjs.extend(relativeTime);
 
-export const getAllReportLocations = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getAllReportLocations = async (req: Request, res: Response) => {
   try {
     const reports = await Report.find(
       {},
-      { location: 1, type: 1, _id: 1, createdAt: 1 }
+      {
+        location: 1,
+        type: 1,
+        _id: 1,
+        createdAt: 1,
+      }
     );
-    const formattedReports = reports.map((report) => ({
-      id: report._id,
-      title: `${
-        report.type.charAt(0).toUpperCase() + report.type.slice(1)
-      } reported`,
-      type: report.type,
-      lat: report.location.coordinates[0],
-      lng: report.location.coordinates[1],
-      time: dayjs(report.createdAt).fromNow(),
-    }));
+    const formattedReports = reports.map((report) => {
+      return {
+        id: report._id,
+        title: `${report.type.charAt(0).toUpperCase() + report.type.slice(1)} reported`,
+        type: report.type,
+        lat: report.location.coordinates[0], // MongoDB stores [lng, lat]
+        lng: report.location.coordinates[1],
+        time: dayjs(report.createdAt).fromNow(), // e.g., "5 minutes ago"
+      };
+    });
+console.log("Formatted Reports:", formattedReports);
     res.json(formattedReports);
   } catch (error) {
     res.status(400).json({ message: "Error fetching report locations", error });
   }
 };
 
-export const changeReportStatus = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+
+export const changeReportStatus = async (req: Request, res: Response) => {
   try {
     const { status } = req.body;
     const report = await Report.findById(req.params.id);
@@ -159,46 +142,44 @@ export const changeReportStatus = async (
   }
 };
 
-export const deleteReport = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const deleteReport = async (req: Request, res: Response) => {
   const { id } = req.params;
+
   try {
     const deleted = await Report.findByIdAndDelete(id);
     if (!deleted) {
-      res.status(404).json({ message: "Report not found" });
-      return;
+      return res.status(404).json({ message: "Report not found" });
     }
     res.status(200).json({ message: "Report deleted successfully" });
   } catch (error) {
+    console.error("Error deleting report:", error);
     res.status(500).json({ message: "Error deleting report", error });
   }
 };
 
-export const updateReport = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const updateReport = async (req: Request, res: Response) => {
   const { id } = req.params;
   const { type, description, status, location } = req.body;
+
   try {
     const report = await Report.findById(id);
     if (!report) {
-      res.status(404).json({ message: "Report not found" });
-      return;
+      return res.status(404).json({ message: "Report not found" });
     }
 
     if (type) report.type = type;
     if (description) report.description = description;
     if (status) report.status = status;
     if (location && Array.isArray(location)) {
-      report.location.coordinates = location as number[];
+      report.location.coordinates = location;
     }
+
+    // Optional: handle image update if needed here
 
     await report.save();
     res.status(200).json({ message: "Report updated successfully", report });
   } catch (error) {
+    console.error("Error updating report:", error);
     res.status(500).json({ message: "Error updating report", error });
   }
 };
