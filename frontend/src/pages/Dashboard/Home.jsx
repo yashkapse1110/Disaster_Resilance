@@ -74,7 +74,7 @@ const Dashboard = () => {
 
     const fetchAlerts = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/alerts");
+        const res = await API.get("/alerts");
         const alerts = res.data || [];
         const formatted = alerts.map((alert) => ({
           type: alert.type,
