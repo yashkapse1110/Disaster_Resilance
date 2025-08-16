@@ -4,7 +4,7 @@ import usePreferences from "../../stores/UsePreference.jsx";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../stores/useAuth";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocalGovStore } from "../stores/localGovStore";
+import { useLocalGovStore } from "../../stores/localGovStore";
 
 const drawerVariants = {
   hidden: { x: "100%" },
