@@ -11,16 +11,10 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import { useTranslation } from "react-i18next";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import {
-  LocateFixed,
-  ChevronDown,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
+import { LocateFixed, ChevronDown, CheckCircle, XCircle } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import API from "../../api/axios";
-
 
 function FlyToFocusedIncident({ incident }) {
   const map = useMap();
@@ -111,13 +105,11 @@ const MapPage = () => {
   useEffect(() => {
     async function fetchIncidents() {
       try {
-        const response = await API.fetch(
-          "/reportsLocation"
-        );
+        const response = await API.get("/reportsLocation");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const data = await response.json();
+        const data = response.data;
         setIncidents(data);
       } catch (error) {
         console.error("Failed to fetch incidents", error);
@@ -231,8 +223,12 @@ const MapPage = () => {
           style={{ height: "80vh", width: "100%" }}
           className="z-0"
         >
-          {focusedIncident && <FlyToFocusedIncident incident={focusedIncident} />}
-          {!focusedIncident && userLocation && <FlyToUserLocation location={userLocation} />}
+          {focusedIncident && (
+            <FlyToFocusedIncident incident={focusedIncident} />
+          )}
+          {!focusedIncident && userLocation && (
+            <FlyToUserLocation location={userLocation} />
+          )}
 
           <TileLayer
             attribution='&copy; <a href="https://carto.com/">CARTO</a>'
@@ -308,7 +304,9 @@ const MapPage = () => {
             </AnimatePresence>
           </MarkerClusterGroup>
 
-          <LocateButton onLocate={(pos) => setUserLocation([pos.lat, pos.lng])} />
+          <LocateButton
+            onLocate={(pos) => setUserLocation([pos.lat, pos.lng])}
+          />
         </MapContainer>
       </div>
     </motion.div>

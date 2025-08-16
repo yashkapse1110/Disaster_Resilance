@@ -5,7 +5,6 @@ import { useLocalGovernment } from "../../hooks/useLocalGovernment";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
-import API from "../../api/axios";
 
 const ReportForm = () => {
   const { t } = useTranslation();
@@ -20,6 +19,7 @@ const ReportForm = () => {
 
   const fileInputRef = useRef(null);
   const localGov = useLocalGovernment();
+  import API from "../../api/axios";
 
   const tags = [
     "fire",
