@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import usePreferences from "../../stores/UsePreference.jsx";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../stores/useAuth";
-import { useLocalGovernment } from "../../hooks/useLocalGovernment.js";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocalGovStore } from "../stores/localGovStore";
 
 const drawerVariants = {
   hidden: { x: "100%" },
@@ -33,7 +33,7 @@ const overlayVariants = {
 const ProfileDrawer = ({ open, onClose }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const localGov = useLocalGovernment();
+  const { localGov } = useLocalGovStore();
 
   const {
     theme,
