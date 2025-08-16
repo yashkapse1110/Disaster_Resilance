@@ -2,14 +2,14 @@ import { useState, useEffect, useRef, forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import ProfileDrawer from "../pages/Dashboard/Profile";
-import { useLocalGovernment } from "../hooks/useLocalGovernment";
 import useAuth from "../stores/useAuth";
+import useLocalGovStore from "../stores/localGovStore";
 
 const NavigationLayout = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const localGov = useLocalGovernment();
+  const { localGov } = useLocalGovStore();
 
   const user = useAuth((state) => state.user);
 

@@ -167,7 +167,7 @@ const ReportForm = () => {
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/*,video/*"
+            accept="image/*"
             capture="environment"
             onChange={handleMediaCapture}
             className="hidden"

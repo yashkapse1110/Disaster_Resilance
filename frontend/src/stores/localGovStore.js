@@ -1,8 +1,29 @@
-// Currently not used but can be used to store the local government name in local storage
-
 import { create } from "zustand";
 
-export const useLocalGovStore = create((set) => ({
+const EXPIRY_TIME = 30 * 60 * 1000; // 30 minutes in ms
+
+export const useLocalGovStore = create((set, get) => ({
   localGov: null,
-  setLocalGov: (name) => set({ localGov: name }),
+  lastUpdated: null,
+
+  setLocalGov: (localGov) =>
+    set({
+      localGov,
+      lastUpdated: Date.now(),
+    }),
+
+  getLocalGov: () => {
+    const { localGov, lastUpdated } = get();
+    if (!localGov || !lastUpdated) return null;
+
+    const now = Date.now();
+    if (now - lastUpdated > EXPIRY_TIME) {
+      // Expired → clear cache
+      set({ localGov: null, lastUpdated: null });
+      return null;
+    }
+    return localGov;
+  },
+
+  clearLocalGov: () => set({ localGov: null, lastUpdated: null }),
 }));

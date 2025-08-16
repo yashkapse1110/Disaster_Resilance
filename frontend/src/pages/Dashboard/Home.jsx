@@ -1,14 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import API from "../../api/axios";
-
-import usePreferences from "../../stores/UsePreference";
-import { useLocalGovernment } from "../../hooks/useLocalGovernment";
 
 const Dashboard = () => {
   const { t } = useTranslation();

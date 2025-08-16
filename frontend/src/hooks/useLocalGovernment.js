@@ -2,13 +2,25 @@
 
 import { useEffect, useState } from "react";
 import * as turf from "@turf/turf";
+import { useLocalGovStore } from "../store/localGovStore"; // adjust path
 
 export const useLocalGovernment = () => {
-  const [localGov, setLocalGov] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { getLocalGov, setLocalGov } = useLocalGovStore();
+  const [localGov, setLocalGovState] = useState(getLocalGov());
 
   useEffect(() => {
     const detectLocalGov = async () => {
+      // Use cached value if available
+      const cached = getLocalGov();
+      if (cached) {
+        setLocalGovState(cached);
+        setLoading(false);
+        return;
+      }
+
       try {
+        // Load all boundaries
         const [butwal, tilottama, omsatiya, siddharthanagar] =
           await Promise.all([
             fetch("/geojson/butwal.json").then((res) => res.json()),
@@ -29,21 +41,29 @@ export const useLocalGovernment = () => {
             );
 
             const name = matched?.properties?.GaPa_NaPa || "Unknown";
+
+            // Cache result in Zustand
             setLocalGov(name);
+            setLocalGovState(name);
+            setLoading(false);
           },
           (err) => {
             console.error("Geolocation Error", err.message);
             setLocalGov("Location Access Denied");
+            setLocalGovState("Location Access Denied");
+            setLoading(false);
           }
         );
       } catch (err) {
         console.error("Boundary fetch failed", err);
         setLocalGov("Detection Failed");
+        setLocalGovState("Detection Failed");
+        setLoading(false);
       }
     };
 
     detectLocalGov();
   }, []);
 
-  return localGov;
+  return { localGov, loading };
 };
