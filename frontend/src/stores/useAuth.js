@@ -18,14 +18,12 @@ const useAuth = create((set) => ({
       const verifyRes = await API.get("/auth/verify");
       const { id } = verifyRes.data.user;
 
-      // ✅ Fetch full user info using ID
+      // Fetch full user info using ID
       const profileRes = await API.get(`/auth/users/${id}`);
       const fullUser = profileRes.data;
 
       set({ user: fullUser });
-      // console.log("✅ Auto login complete:", fullUser);
     } catch (err) {
-      // console.log("Not logged in");
       set({ user: null });
     }
   },
