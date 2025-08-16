@@ -205,7 +205,7 @@ const Dashboard = () => {
                   >
                     <div className="relative">
                       <img
-                        src={`http://localhost:3000/${incident.imageUrl}`}
+                        src={`${import.meta.env.VITE_API_URL}/${incident.imageUrl}`}
                         alt={incident.type}
                         className="h-60 w-full object-cover rounded-3xl cursor-pointer"
                         onClick={() =>
