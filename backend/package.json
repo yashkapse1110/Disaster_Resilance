@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "tsx --watch src/main.ts",
-    "db:generate": "npx prisma migrate dev --name init"
+    "db:generate": "npx prisma migrate dev --name init",
+    "build": "tsc",
+    "start": "node dist/main.js"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",

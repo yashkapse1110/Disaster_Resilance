@@ -13,7 +13,7 @@ dotenv.config();
 // Middleware
 app.use("/uploads", express.static(path.join(__dirname, "../uploads"))); // Serve static files from the uploads directory
 app.use(cors({
-  origin: ["http://localhost:5173"], // frontend dev server
+   origin: [process.env.CLIENT_URL || "http://localhost:5173"], // frontend dev server
   credentials: true 
 })); // Apply CORS middleware with the configuration
 app.use(express.json());
