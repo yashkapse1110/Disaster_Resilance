@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import * as turf from "@turf/turf";
-import { useLocalGovStore } from "../store/localGovStore"; // adjust path
+import { useLocalGovStore } from "../stores/localGovStore";
 
 export const useLocalGovernment = () => {
   const [loading, setLoading] = useState(true);
