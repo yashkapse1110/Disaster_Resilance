@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import ProfileDrawer from "../pages/Dashboard/Profile";
 import useAuth from "../stores/useAuth";
-import useLocalGovStore from "../stores/localGovStore";
+import { useLocalGovStore } from "../stores/localGovStore";
 
 const NavigationLayout = () => {
   const { t } = useTranslation();

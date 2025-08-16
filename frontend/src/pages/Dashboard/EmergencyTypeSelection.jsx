@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import useLocalGovStore from "../../stores/localGovStore";
+import { useLocalGovStore } from "../../stores/localGovStore";
 
 const emergencyTypes = [
   { type: "fire", icon: "/icons/fire-red.svg", labelKey: "emergency.fire" },
