@@ -5,6 +5,7 @@ import { useLocalGovernment } from "../../hooks/useLocalGovernment";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import API from "../../api/axios";
 
 const ReportForm = () => {
   const { t } = useTranslation();
@@ -88,11 +89,9 @@ const ReportForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/reports",
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
+      const response = await API.post("/reports", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       if (response.status !== 201) throw new Error(t("report.submitError"));
       setSubmitted(true);
       confetti({

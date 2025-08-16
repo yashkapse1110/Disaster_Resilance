@@ -3,37 +3,56 @@ import Report from "../models/reportModel";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
 export const createReport = async (req: Request, res: Response) => {
-  const allowedTypes = ["fire", "police", "flood", "accident", "landslide", "other"];
+  const allowedTypes = [
+    "fire",
+    "police",
+    "flood",
+    "accident",
+    "landslide",
+    "other",
+  ];
   try {
-    const { type, description, location} = req.body;
-    
+    const { type, description, location } = req.body;
+
     if (!type || typeof type !== "string") {
-  res.status(400).json({
-    message: `Invalid type. It must be one of: ${allowedTypes.join(", ")}.`,
-  });
-  return;
-}
+      return res.status(400).json({
+        message: `Invalid type. It must be one of: ${allowedTypes.join(", ")}.`,
+      });
+    }
 
     if (
       !description ||
       typeof description !== "string" ||
       description.length < 10
     ) {
-      res.status(400).json({
+      return res.status(400).json({
         message:
           "Description must be a string and at least 10 characters long.",
       });
-      return;
     }
 
     const parsedLocation = JSON.parse(location);
     if (!parsedLocation) {
-      res.status(400).json({ message: "Location must be a string." });
-      return;
+      return res.status(400).json({ message: "Location must be a string." });
     }
-  
-    const imageUrl = `uploads/${req.file?.filename}`;
+
+    let imageUrl = "";
+    if (req.file) {
+      // Upload to Cloudinary
+      const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+        folder: "reports",
+      });
+      imageUrl = uploadResult.secure_url;
+    }
 
     const report = new Report({
       type,
@@ -41,13 +60,13 @@ export const createReport = async (req: Request, res: Response) => {
       location: {
         coordinates: parsedLocation,
       },
-      // userId,
       imageUrl,
     });
 
     await report.save();
     res.status(201).json({ message: "Report created successfully", report });
   } catch (error) {
+    console.error("Error creating report:", error);
     res.status(400).json({ message: "Error creating report", error });
   }
 };
@@ -111,20 +130,21 @@ export const getAllReportLocations = async (req: Request, res: Response) => {
     const formattedReports = reports.map((report) => {
       return {
         id: report._id,
-        title: `${report.type.charAt(0).toUpperCase() + report.type.slice(1)} reported`,
+        title: `${
+          report.type.charAt(0).toUpperCase() + report.type.slice(1)
+        } reported`,
         type: report.type,
-        lat: report.location.coordinates[0], // MongoDB stores [lng, lat]
+        lat: report.location.coordinates[0],
         lng: report.location.coordinates[1],
-        time: dayjs(report.createdAt).fromNow(), // e.g., "5 minutes ago"
+        time: dayjs(report.createdAt).fromNow(),
       };
     });
-console.log("Formatted Reports:", formattedReports);
+    console.log("Formatted Reports:", formattedReports);
     res.json(formattedReports);
   } catch (error) {
     res.status(400).json({ message: "Error fetching report locations", error });
   }
 };
-
 
 export const changeReportStatus = async (req: Request, res: Response) => {
   try {

@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import API from "../../api/axios";
+
 
 function FlyToFocusedIncident({ incident }) {
   const map = useMap();
@@ -109,8 +111,8 @@ const MapPage = () => {
   useEffect(() => {
     async function fetchIncidents() {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/reportsLocation"
+        const response = await API.fetch(
+          "/reportsLocation"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
