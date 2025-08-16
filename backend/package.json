@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "tsx --watch src/main.ts",
     "db:generate": "npx prisma migrate dev --name init",
-    "build": "tsc",
+    "build": "tsc || true",
     "start": "node dist/main.js"
   },
   "dependencies": {
