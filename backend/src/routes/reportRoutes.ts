@@ -23,6 +23,4 @@ router.put("/reports/:id/status", changeReportStatus);
 router.delete("/reports/:id", authenticateToken, deleteReport);
 router.put("/reports/:id", authenticateToken, updateReport);
 
-
-
 export default router;

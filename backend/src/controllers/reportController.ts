@@ -20,10 +20,11 @@ export const createReport = async (req: Request, res: Response) => {
     "landslide",
     "other",
   ];
+
   try {
     const { type, description, location } = req.body;
 
-    if (!type || typeof type !== "string") {
+    if (!type || typeof type !== "string" || !allowedTypes.includes(type)) {
       return res.status(400).json({
         message: `Invalid type. It must be one of: ${allowedTypes.join(", ")}.`,
       });
@@ -42,29 +43,38 @@ export const createReport = async (req: Request, res: Response) => {
 
     const parsedLocation = JSON.parse(location);
     if (!parsedLocation) {
-      return res.status(400).json({ message: "Location must be a string." });
+      return res
+        .status(400)
+        .json({ message: "Location must be a valid JSON string." });
     }
 
     let imageUrl = "";
+    let imageId = "";
+
     if (req.file) {
       // Upload to Cloudinary
       const uploadResult = await cloudinary.uploader.upload(req.file.path, {
         folder: "reports",
       });
+
       imageUrl = uploadResult.secure_url;
+      imageId = uploadResult.public_id;
     }
 
     const report = new Report({
       type,
       description,
-      location: {
-        coordinates: parsedLocation,
-      },
+      location: { coordinates: parsedLocation },
       imageUrl,
+      imageId,
     });
 
     await report.save();
-    res.status(201).json({ message: "Report created successfully", report });
+
+    res.status(201).json({
+      message: "Report created successfully",
+      report,
+    });
   } catch (error) {
     console.error("Error creating report:", error);
     res.status(400).json({ message: "Error creating report", error });
@@ -194,9 +204,23 @@ export const updateReport = async (req: Request, res: Response) => {
       report.location.coordinates = location;
     }
 
-    // Optional: handle image update if needed here
+    // ✅ Handle image update
+    if (req.file) {
+      // Delete old image from Cloudinary if exists
+      if (report.imageId) {
+        await cloudinary.uploader.destroy(report.imageId);
+      }
+
+      const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+        folder: "reports",
+      });
+
+      report.imageUrl = uploadResult.secure_url;
+      report.imageId = uploadResult.public_id;
+    }
 
     await report.save();
+
     res.status(200).json({ message: "Report updated successfully", report });
   } catch (error) {
     console.error("Error updating report:", error);
