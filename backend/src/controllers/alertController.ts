@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Alert from "../models/alertModel";
 
 // Create a new alert
-export const createAlert = async (req: Request, res: Response) => {
+export const createAlert = async (req: Request, res: Response): Promise<void> => {
   try {
     const { title, description, type, location } = req.body;
     const createdBy = req.user?.id;
