@@ -105,6 +105,11 @@ const MapPage = () => {
   useEffect(() => {
     async function fetchIncidents() {
       try {
+        console.log(
+          "Fetching from:",
+          `${import.meta.env.VITE_API_URL}/reportsLocation`
+        );
+
         const response = await API.get("/reportsLocation");
         if (!response.ok) {
           throw new Error("Network response was not ok");

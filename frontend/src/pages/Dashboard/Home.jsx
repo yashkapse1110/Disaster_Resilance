@@ -204,8 +204,6 @@ const Dashboard = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative">
-                      {console.log(incident.imageUrl)}
-                      
                       <img
                         src={`${incident.imageUrl}`}
                         alt={incident.type}
