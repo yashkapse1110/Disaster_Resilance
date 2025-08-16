@@ -204,8 +204,10 @@ const Dashboard = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative">
+                      {console.log(incident.imageUrl)}
+                      
                       <img
-                        src={`${import.meta.env.VITE_API_URL}/${incident.imageUrl}`}
+                        src={`${incident.imageUrl}`}
                         alt={incident.type}
                         className="h-60 w-full object-cover rounded-3xl cursor-pointer"
                         onClick={() =>
