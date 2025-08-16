@@ -5,6 +5,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import API from "../../api/axios";
 
 import usePreferences from "../../stores/UsePreference";
 import { useLocalGovernment } from "../../hooks/useLocalGovernment";
@@ -29,7 +30,7 @@ const Dashboard = () => {
 
     const fetchReports = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/reports");
+        const response = await API.get("/reports");
         const data = response.data;
         if (!isMounted) return;
         setIncidents(data); // Show cards immediately
