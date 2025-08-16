@@ -18,7 +18,7 @@ const router = Router();
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/verify", verifyUser);
+router.get("/verify", authenticateToken, verifyUser);
 router.get("/users/:id", getUserById);
 router.get("/users/around", getAllUsersAroundLocation);
 

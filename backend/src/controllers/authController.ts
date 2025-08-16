@@ -153,27 +153,21 @@ export const loginUser = async (req: Request, res: Response) => {
   }
 };
 
-export const verifyUser = (req: Request, res: Response) => {
-  const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
-
-  if (!token) {
-    res.status(401).json({ message: "Token missing" });
-  }
-
-  jwt.verify(
-    token,
-    process.env.JWT_SECRET || "secret",
-    (
-      err: jwt.VerifyErrors | null,
-      decoded: string | JwtPayload | undefined
-    ) => {
-      if (err) {
-        res.status(403).json({ message: "Invalid or expired token" });
-      }
-
-      res.status(200).json({ message: "Token valid", user: decoded });
+export const verifyUser = async (req: Request, res: Response) => {
+  try {
+    if (!req.user) {
+      return res.status(401).json({ message: "Unauthorized" });
     }
-  );
+
+    const user = await User.findById(req.user.id).select("-password");
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ user });
+  } catch (error) {
+    res.status(500).json({ message: "Error verifying user", error });
+  }
 };
 
 export const getUserById = async (req: Request, res: Response) => {
