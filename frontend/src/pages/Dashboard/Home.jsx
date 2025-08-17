@@ -183,7 +183,7 @@ const Dashboard = () => {
         </div>
 
         {incidents.length === 0 ? (
-          <Skeleton height={80} width={270} count={3} borderRadius={20} />
+          <Skeleton height={320} width={270} count={1} borderRadius={20} />
         ) : (
           <div className="flex flex-row-reverse gap-10 overflow-x-auto p-[10px] scrollbar-hide shadow-md rounded-lg scroll-smooth snap-x snap-mandatory">
             <AnimatePresence>
