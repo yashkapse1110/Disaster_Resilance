@@ -126,7 +126,7 @@ const Dashboard = () => {
 
   return (
     <motion.div
-      className="mt-2 px-4 py-2 space-y-2 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-4xl min-h-full mx-auto bg-[#edf2f8] shadow-md rounded-lg"
+      className="mt-0 px-4 py-1 space-y-1 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-4xl min-h-full mx-auto bg-[#edf2f8] shadow-md rounded-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -134,7 +134,7 @@ const Dashboard = () => {
     >
       {/*  Notifications */}
       {loadingAlerts ? (
-        <Skeleton height={80} borderRadius={20} />
+        <Skeleton height={20} borderRadius={20} />
       ) : notifications.length > 0 ? (
         <div className="flex overflow-x-auto gap-4 p-2 scroll-smooth">
           <AnimatePresence>
@@ -164,8 +164,8 @@ const Dashboard = () => {
       ) : null}
 
       {/*  Reports */}
-      <div className="space-y-2 mt-2">
-        <div className="flex justify-between items-center rounded-lg p-2 px-4">
+      <div className="space-y-2 mt-0">
+        <div className="flex justify-between items-center rounded-lg p-2">
           <h2 className="text-2xl font-bold text-blue-950">
             {t("dashboard.latestReports")}
           </h2>
@@ -192,7 +192,7 @@ const Dashboard = () => {
                 return (
                   <motion.div
                     key={incident._id}
-                    className="relative mt-4 min-w-[270px] rounded-xl shadow-md bg-white p-5"
+                    className="relative mt-1 min-w-[270px] rounded-xl shadow-md bg-white p-5"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
@@ -274,7 +274,7 @@ const Dashboard = () => {
 
       {/* SOS Button */}
       <motion.div
-        className="bg-[#e9403e] mt-9 mb-[60px] p-1 rounded-full shadow-md"
+        className="bg-[#e9403e] mt-2 mb-[60px] p-1 rounded-full shadow-md"
         animate={{ scale: [1, 1.02, 1] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
