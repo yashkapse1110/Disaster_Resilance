@@ -71,7 +71,7 @@ const NavigationLayout = () => {
   return (
     <div className="relative min-h-screen bg-red-50 text-gray-800 w-full">
       {/* Top Navbar */}
-      <div className="text-white bg-[#155ac1] px-4 pt-6 pb-2 relative">
+      <div className="text-white bg-[#155ac1] px-4 py-2 relative">
         <div className="text-lg font-extrabold">{t("navigation.hello")},</div>
         <div className="text-base">{userName}!</div>
         <div className="absolute right-4 top-4">

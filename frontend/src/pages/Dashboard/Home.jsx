@@ -29,7 +29,7 @@ const Dashboard = () => {
         const response = await API.get("/reports");
         const data = response.data;
         if (!isMounted) return;
-        setIncidents(data); // Show cards immediately
+        setIncidents(data);
 
         // Reverse geocode in background
         const locationFetches = await Promise.all(
@@ -126,13 +126,13 @@ const Dashboard = () => {
 
   return (
     <motion.div
-      className="mt-4 p-4 space-y-5 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-4xl min-h-full mx-auto bg-[#edf2f8] shadow-md rounded-lg"
+      className="mt-2 px-4 py-2 space-y-2 max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-4xl min-h-full mx-auto bg-[#edf2f8] shadow-md rounded-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0, y: -20 }}
     >
-      {/* 🔔 Notifications */}
+      {/*  Notifications */}
       {loadingAlerts ? (
         <Skeleton height={80} borderRadius={20} />
       ) : notifications.length > 0 ? (
@@ -163,8 +163,8 @@ const Dashboard = () => {
         </div>
       ) : null}
 
-      {/* 📋 Reports */}
-      <div className="space-y-2 mt-4">
+      {/*  Reports */}
+      <div className="space-y-2 mt-2">
         <div className="flex justify-between items-center rounded-lg p-2 px-4">
           <h2 className="text-2xl font-bold text-blue-950">
             {t("dashboard.latestReports")}
@@ -272,7 +272,7 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* 🆘 SOS Button */}
+      {/* SOS Button */}
       <motion.div
         className="bg-[#e9403e] mt-9 mb-[60px] p-1 rounded-full shadow-md"
         animate={{ scale: [1, 1.02, 1] }}
