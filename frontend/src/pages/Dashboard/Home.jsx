@@ -164,7 +164,7 @@ const Dashboard = () => {
       ) : null}
 
       {/*  Reports */}
-      <div className="space-y-2 mt-0">
+      <div className="space-y-1 mt-0">
         <div className="flex justify-between items-center rounded-lg p-2">
           <h2 className="text-2xl font-bold text-blue-950">
             {t("dashboard.latestReports")}
@@ -183,7 +183,7 @@ const Dashboard = () => {
         </div>
 
         {incidents.length === 0 ? (
-          <Skeleton height={320} width={270} count={3} borderRadius={20} />
+          <Skeleton height={80} width={270} count={3} borderRadius={20} />
         ) : (
           <div className="flex flex-row-reverse gap-10 overflow-x-auto p-[10px] scrollbar-hide shadow-md rounded-lg scroll-smooth snap-x snap-mandatory">
             <AnimatePresence>
@@ -192,7 +192,7 @@ const Dashboard = () => {
                 return (
                   <motion.div
                     key={incident._id}
-                    className="relative mt-1 min-w-[270px] rounded-xl shadow-md bg-white p-5"
+                    className="relative mt-0 min-w-[270px] rounded-xl shadow-md bg-white p-5"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}

@@ -74,7 +74,7 @@ const NavigationLayout = () => {
       <div className="text-white bg-[#155ac1] px-4 py-2 relative">
         <div className="text-lg font-extrabold">{t("navigation.hello")},</div>
         <div className="text-base">{userName}!</div>
-        <div className="absolute right-4 top-4">
+        <div className="absolute right-4 top-2">
           <img
             src="/assets/logo.png"
             alt="Logo"
