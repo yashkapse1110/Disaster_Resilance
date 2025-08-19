@@ -139,7 +139,7 @@ const AnimatedRoutes = () => {
           path="/admin"
           element={
             <RequireAdmin>
-              <AdminLayout />
+              <AdminLayout /> 
             </RequireAdmin>
           }
         >
