@@ -79,7 +79,7 @@ export default function AdminDashboard() {
   const alertCounts = Object.values(alertsByDate);
 
   return (
-    <>
+    <div className="relative">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -229,6 +229,6 @@ export default function AdminDashboard() {
           />
         </motion.div>
       </div>
-    </>
+    </div>
   );
 }
