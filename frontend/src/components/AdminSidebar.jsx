@@ -91,7 +91,7 @@ export default function AdminSidebar() {
           </div>
 
           {!collapsed && (
-            <p className="text-xs text-gray-500 mt-6">© 2025 Sajilo Sahayata</p>
+            <p className="text-xs text-gray-500 mt-6">© 2025 Disaster resilence</p>
           )}
         </div>
       </aside>

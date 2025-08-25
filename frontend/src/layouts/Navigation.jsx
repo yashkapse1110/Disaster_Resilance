@@ -71,12 +71,12 @@ const NavigationLayout = () => {
   return (
     <div className="relative min-h-screen bg-red-50 text-gray-800 w-full">
       {/* Top Navbar */}
-      <div className="text-white bg-[#155ac1] px-4 py-2 relative">
+      <div className="text-white bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)] px-4 py-2 relative">
         <div className="text-lg font-extrabold">{t("navigation.hello")},</div>
         <div className="text-base">{userName}!</div>
         <div className="absolute right-4 top-2">
           <img
-            src="/assets/logo.png"
+            src="/assets/logo2.png"
             alt="Logo"
             className="w-15 h-15 rounded-full"
             onClick={() => navigate("/dashboard/home")}

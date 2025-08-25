@@ -33,7 +33,7 @@ const Register = () => {
     if (!passwordValid) return setError(t("register.shortPassword"));
     if (!passwordsMatch) return setError(t("register.passwordMismatch"));
 
-    const fullPhone = "+977" + phone;
+    const fullPhone = "+91" + phone;
 
     // ✅ BACKEND INTEGRATION PLACE
     login({ name, phone: fullPhone });

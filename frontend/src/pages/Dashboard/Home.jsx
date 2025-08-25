@@ -29,7 +29,8 @@ const Dashboard = () => {
         const response = await API.get("/reports");
         const data = response.data;
         if (!isMounted) return;
-        setIncidents(data);
+        setIncidents(Array.isArray(data) ? data : data.reports || []);
+
 
         // Reverse geocode in background
         const locationFetches = await Promise.all(
@@ -59,7 +60,7 @@ const Dashboard = () => {
         );
 
         const namesMap = {};
-        locationFetches.forEach((result) => {
+        locationFetches?.forEach((result) => {
           if (result) namesMap[result.id] = result.name;
         });
         if (isMounted) setLocationNames(namesMap);
@@ -71,7 +72,7 @@ const Dashboard = () => {
     const fetchAlerts = async () => {
       try {
         const res = await API.get("/alerts");
-        const alerts = res.data || [];
+        const alerts = Array.isArray(res.data) ? res.data : res.data.alerts || [];
         const formatted = alerts.map((alert) => ({
           type: alert.type,
           location: alert.location || "Unknown area",
@@ -97,7 +98,7 @@ const Dashboard = () => {
 
   const filteredIncidents = incidents
     .filter((incident) => {
-      const status = incident.status || "reported";
+      const status = incident?.status || "reported";
       return filterType === "all" || status === filterType;
     })
     .sort((a, b) =>
@@ -284,7 +285,7 @@ const Dashboard = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
         >
-          <img src="/icons/call.svg" alt="Call" className="w-16 h-11" />
+          <img src="/icons/calll.svg" alt="Call" className="w-16 h-11" />
           {t("dashboard.sahayatacall")}
         </motion.button>
       </motion.div>
