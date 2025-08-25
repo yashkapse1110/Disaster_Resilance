@@ -1,4 +1,4 @@
-# 🌐 Sajilo Sahayata
+# 🌐 Disaster_Resilence
 
 **A Disaster Reporting and Coordination System**  
 _From Alert to Action Instantly_
@@ -12,7 +12,7 @@ _From Alert to Action Instantly_
 
 ## About the Project
 
-**Sajilo Sahayata** is a real-time disaster management and coordination platform designed to minimize the time gap between incident reporting and government response. By connecting citizens, first responders, and local government officials on a single platform, the system ensures **faster alerts**, **smarter coordination**, and **timely actions** during emergencies.
+**Disaster_Resilence** is a real-time disaster management and coordination platform designed to minimize the time gap between incident reporting and government response. By connecting citizens, first responders, and local government officials on a single platform, the system ensures **faster alerts**, **smarter coordination**, and **timely actions** during emergencies.
 
 ### How It Works
 
@@ -95,7 +95,7 @@ In addition, the platform offers:
   </div>
 </details>
 
-### [Contact Me](https://arunneupane.netlify.app)
+
 
 ## Requirements
 
@@ -105,19 +105,11 @@ In addition, the platform offers:
 
 ## How to Run
 
-1. **Download the repository**
 
-   - [Download ZIP](https://github.com/arundada9000/sajilo-sahayata/archive/refs/heads/main.zip), or
-   - Clone with Git:
-     ```bash
-     git clone https://github.com/arundada9000/sajilo-sahayata.git
-     ```
-
-2. **Open the project**
+**Open the project**
 
    - Open the `frontend` and `backend` folders in **separate Visual Studio Code windows**.
-
-3. **Install dependencies & run**
+**Install dependencies & run**
 
    - In **frontend folder**, run:
      ```bash
@@ -137,8 +129,7 @@ In addition, the platform offers:
    JWT_SECRET=your-secret-key
    ```
 
-4. **Need Help?**
-   - Contact me on WhatsApp: **+977 9811420975**
+
 
 ## Contributing
 
@@ -148,48 +139,16 @@ For major changes, open an issue first to discuss what you’d like to change.
 
 ---
 
-## Project Background
-
-### Academic Project & Hackathon Winner
-
-**Sajilo Sahayata** began as a Final Year Project for the **BSc.CSIT** program and proudly won the **BMC InnovateX** hackathon competition. It showcases the potential of technology to streamline emergency response and coordination.
 
 ---
 
-### Team Contributions
 
-#### 🔹 Initial Prototype – _Team Emergex_
 
-- **Aayush Chapagain** – UI/UX Design & Project Manager
-- **Arun Neupane** – Frontend Development
-- **Barsha Panthi** – UI/UX Design & Research
-- **Bibek Bhusal** – Backend Development
+
 
     <img src="./assets/images/team-emergex.jpg" alt="Team Emergex" width="350"/>
 
-<details>
-  <summary><strong>Team Emergex – View Team Photos</strong></summary>
-  <br />
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <img src="./assets/images/team-emergex.jpg" alt="Team Emergex" width="350"/>
-    <img src="./assets/images/team-emergex-1.jpg" alt="Team Emergex" width="350"/>
-    <img src="./assets/images/team-emergex-2.jpg" alt="Team Emergex" width="350"/>
-    <img src="./assets/images/team-emergex-3.jpg" alt="Team Emergex" width="350"/>
-    <img src="./assets/images/team-emergex-4.jpg" alt="Team Emergex" width="350"/>
-    <img src="./assets/images/team-emergex-winner.jpg" alt="Team Emergex Winner" width="350"/>
-  </div>
-</details>
 
-#### Further Development – _Team BigAh_
-
-- **Arun Neupane** – Full-Stack Development
-- **Bijay Chaudhary** – Documentation & Reports
-- **Sunil Paudyal** – Logistics & Coordination, Entertainment
-- **Supervised by:** Mr. Suraj Pandey
-
-    <img src="./assets/images/team-bigah.jpg" alt="Team Emergex" width="350"/>
-
----
 
 ## Acknowledgements
 
@@ -219,35 +178,20 @@ To contribute:
 
 ---
 
-## Contact
 
-If you have questions, feedback, or ideas:
 
-[Portfolio Website](https://arunneupane.netlify.app)
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?&logo=facebook&logoColor=white)](https://facebook.com/arunneupane9000)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?&logo=instagram&logoColor=white)](https://instagram.com/arundada9000)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-%25F4C746.svg?&logo=whatsapp&logoColor=white)](https://wa.me/+9779811420975)
-[![Email](https://img.shields.io/badge/Email-%23D14836.svg?&logo=gmail&logoColor=white)](mailto:arunneupane0000@gmail.com)
-[![Phone](https://img.shields.io/badge/Phone-%234CAF50.svg?&logo=phone&logoColor=white)](tel:+9779811420975)
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?&logo=youtube&logoColor=white)](https://youtube.com/@code_with_ease)
 
----
 
-## Changelog
 
-- v1.0.0 — initial release (August 2, 2025)
+
+
 
 ## Final Note
 
-**Sajilo Sahayata** is more than a project — it's a vision for faster, smarter, and more localized disaster response. With continued improvements, we hope to empower citizens and first responders through real-time communication and coordination tools.
+**Disaster_Resilence** is more than a project — it's a vision for faster, smarter, and more localized disaster response. With continued improvements, we hope to empower citizens and first responders through real-time communication and coordination tools.
 
 ---
 
-## License
 
-This project is developed and maintained by **Arun Neupane**.  
-It is intended for **educational and fair-use purposes only**.
-
-For commercial use or redistribution, please reach out to me.
 
 ---
